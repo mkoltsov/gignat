@@ -1,0 +1,30 @@
+<div ng-if="debugMode">
+    <pre class="code">{{ clients | json }}</pre>
+</div>
+<div class="row margin-top-20">
+</div>
+<div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
+    <div class="row">
+        <div class="list-group" ng-repeat="client in clients">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="box">
+                    <div class="box-icon">
+                        <span class="fa fa-4x" ng-class="icon(client.COMPANY)"></span>
+                    </div>
+                    <div class="info">
+                        <h4 class="text-center">{{client.COMPANY}}</h4>
+
+                        <p>To understand what financial markets are doing today and where they may go in the future, you
+                            have to understand how financial markets have changed over the past 300 years. During the
+                            1600s, Europe began exploring the world and put its finances on a sounder footing. To do
+                            this, they established corporations whose stock traded in the world’s three financial
+                            centers. GFD has data from London (Bank of England, South Sea Company), Amsterdam (East
+                            Indies Company) and Paris (Mississippi Company) from the 1700s including the Great Bubble of
+                            1720.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

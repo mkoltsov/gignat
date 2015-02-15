@@ -1,0 +1,48 @@
+<div class="page-header">
+    <h2>Login</h2>
+</div>
+<div class="alert alert-danger" role="alert" ng-show="loginMessage">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{loginMessage}}
+</div>
+<div class="row">
+
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="username" class="col-sm-3 control-label">User Name:</label>
+
+                <div class="col-sm-9">
+                    <input id="username" ng-model="username" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Password:</label>
+
+                <div class="col-sm-9">
+                    <input id="password" ng-model="password" type="password" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <p class="alert alert-info">
+            Please log-in using your account and password.<br>
+            In case this is a presentation use <em>admin/admin</em> OR <em>user/user</em> credentials</a><br>
+            <br>
+            If you have problems logging in, please contact <a href="mailto:password_retrieval@example.com">password_retrieval@db.com</a> (<strong>NOT REAL</strong>)
+            <br><br>
+            <i class="fa fa-plug fa-2x"></i> This instance is <span ng-if="dbName === 'ANY'"><i
+                class="fa fa-exclamation-triangle"></i><strong>NOT</strong></span> connected to
+            <strong>{{dbName}}</strong> database
+        </p>
+    </div>
+
+</div>

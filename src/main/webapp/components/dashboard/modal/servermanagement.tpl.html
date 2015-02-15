@@ -1,0 +1,35 @@
+<div class="modal-header"><h4 class="modal-title">{{modalName}}</h4></div>
+<div class="modal-body">
+        <div class="row margin-bottom">
+            <div class="col-md-3 ">
+                <div>Company name</div>
+            </div>
+
+            <div class="col-md-3">
+                <input class="full-width" ng-model="data.COMPANY">
+            </div>
+        </div>
+        <div class="row margin-bottom">
+            <div class="col-md-3 ">
+                <div>Description</div>
+            </div>
+
+            <div class="col-md-3">
+                <input class="full-width" ng-model="data.DESCRIPTION">
+            </div>
+        </div>
+        <div class="row margin-bottom">
+            <div class="col-md-3 ">
+                <div>Status</div>
+            </div>
+
+            <div class="col-md-3">
+                <input class="full-width" ng-model="data.STATUS">
+            </div>
+        </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">{{firstButtonName}}</button>
+    <button type="button" class="btn btn-primary" ng-click="save()">{{secondButtonName}}
+    </button>
+</div>

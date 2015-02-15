@@ -1,0 +1,49 @@
+{
+  "name": "gignat",
+  "version": "0.0.1",
+  "description": "template",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "template"
+  ],
+  "authors": [
+    "mkoltsov@luxoft.com"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "bootstrap": "~3.3.2",
+    "fontawesome": "~4.2.0",
+    "angular": "~1.2.29",
+    "angular-animate": "~1.2.29",
+    "angular-cookies": "~1.2.29",
+    "angular-bootstrap": "~0.12.0",
+    "angular-ui-router": "~0.2.11",
+    "angular-moment": "~0.9.0",
+    "toaster": "~0.4.10",
+    "rdash-ui": "~1.0.1",
+    "d3": "~3.4.1",
+    "nvd3": "~v1.1.15-beta",
+    "angularjs-nvd3-directives": "0.0.7",
+    "moment":"~2.9.0",
+    "restangular": "~1.4.0",
+    "lodash": "~2.1.0",
+    "angular-ui-tree": "~2.1.2",
+    "ng-grid": "~2.0.0",
+    "ngInfiniteScroll":"~1.2.0",
+    "mdo-http-auth-interceptor": "~1.0.0"
+  },
+  "resolutions": {
+    "d3": "~3.4.1"
+  },
+  "homepage": "luxoft.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

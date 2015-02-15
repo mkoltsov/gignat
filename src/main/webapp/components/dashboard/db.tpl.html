@@ -1,0 +1,93 @@
+<div class="margin-top-20">
+<div ng-if="debugMode">
+    <pre class="code">{{ clients | json }}</pre>
+</div>
+
+    <div class="row">
+        <div ng-repeat="control in dashboardControls" class="col-lg-3 col-md-6 col-xs-12">
+            <rd-widget>
+                <rd-widget-body>
+                    <div class="widget-icon pull-left" ng-class="control.COLOR">
+                        <i class="fa" ng-class="control.ICON"></i>
+                    </div>
+                    <div class="title">{{control.VALUE}}</div>
+                    <div class="comment">{{control.KEY}}</div>
+                </rd-widget-body>
+            </rd-widget>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-lg-6">
+        <rd-widget>
+            <rd-widget-header icon="fa-users" title="Clients">
+                <a href="" ng-click="open('components/dashboard/modal/servermanagement.tpl.html','ServerManagementController')"><i class="fa fa-plus-circle"></i>ADD</a>
+            </rd-widget-header>
+            <rd-widget-body classes="medium no-padding">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                        <tr ng-repeat="client in clients">
+                            <td><button class="btn btn-sm btn-link" ng-click="showAssets(client.COMPANY)">{{client.COMPANY}}</button></td>
+                            <td>{{client.DESCRIPTION}}</td>
+                            <td><span ng-class="{'text-success':client.STATUS==1,
+                            'text-danger':client.STATUS==2,'text-warning':client.STATUS==3}"><i class="fa" ng-class="{'fa-check':client.STATUS==1,
+                            'fa-warning':client.STATUS==2,'fa-flash':client.STATUS==3}"></i></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </rd-widget-body>
+        </rd-widget>
+    </div>
+    <div class="col-lg-6">
+        <rd-widget>
+            <rd-widget-header icon="fa-bank" title="Assets">
+                <input type="text" placeholder="Search" class="form-control input-sm" ng-model="filterOptions.filterText"/>
+            </rd-widget-header>
+            <rd-widget-body classes="medium no-padding">
+                <div class="gridStyle" ng-grid="gridOptions" style="height: 250px;"></div>
+            </rd-widget-body>
+            <rd-widget>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <rd-widget>
+            <rd-widget-header icon="fa-area-chart" title="Charts">
+                <select ng-model="userData.selectedCompany" ng-options="o as o.COMPANY for o in clients" class="width-200">
+                    <option value="">------</option>
+                </select> <button class="btn btn-sm btn-info margin-left-20" ng-click="showChart(userData.selectedCompany.COMPANY)">Show sales</button>
+            </rd-widget-header>
+                <nvd3-line-chart
+                        data="chartData"
+                        id="exampleId"
+                        width="550"
+                        height="294"
+                        showXAxis="true"
+                        showYAxis="true"
+                        useInteractiveGuideLine="true"
+                        objectequality="false"
+                        tooltips="true"
+                        isArea="true"
+                        showLegend="true"
+                        tooltipcontent="toolTipContentFunction()">
+                    <svg></svg>
+                </nvd3-line-chart>
+        </rd-widget>
+    </div>
+    <div class="col-lg-6">
+        <rd-widget>
+            <rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
+            </rd-widget-header>
+            <rd-widget-body>
+                <rd-loading></rd-loading>
+            </rd-widget-body>
+        </rd-widget>
+    </div>
+</div>
+
+</div>
+<!--<div class="margin-top-20 centered" ng-hide="calculateData">-->
+     <!--<h2><i class="fa fa-pause fa-lg"></i> LOADING</h2>-->
+<!--</div>-->

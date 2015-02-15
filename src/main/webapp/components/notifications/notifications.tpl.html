@@ -1,0 +1,16 @@
+<div class="page-header">
+    <h2><span class="glyphicon glyphicon-th-list"></span> Notifications</h2>
+</div>
+
+<div class="row">
+    <div>
+        <div ng-repeat="notification in notifications">
+            <div class="alert" ng-class="notification.type === 'error' ? 'alert-danger':'alert-'+notification.type"
+                 role="alert">
+                <h4><span class="glyphicon" ng-class="{'glyphicon-exclamation-sign':notification.type === 'error',
+                                                           'glyphicon-ok':notification.type === 'success'}"
+                          aria-hidden="true"></span> {{notification.date}} {{notification.text}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

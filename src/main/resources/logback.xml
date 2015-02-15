@@ -1,0 +1,37 @@
+<configuration scan="true" scanPeriod="30 seconds" debug="true">
+    <!--<property name="destination" value="" />-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>${destination}.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash; rollover daily &ndash;&gt;-->
+            <!--<fileNamePattern>${destination}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+            <!--&lt;!&ndash; Keep logs for 7 days &ndash;&gt;-->
+            <!--<maxHistory>7</maxHistory>-->
+
+            <!--<timeBasedFileNamingAndTriggeringPolicy-->
+                    <!--class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                <!--&lt;!&ndash; or whenever the file size reaches 100MB &ndash;&gt;-->
+                <!--<maxFileSize>100KB</maxFileSize>-->
+            <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="com.db.initiatives" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <!--<appender-ref ref="ROLLING" />-->
+    </root>
+
+</configuration>
