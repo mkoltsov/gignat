@@ -6,7 +6,7 @@
     <artifactId>gignat</artifactId>
     <name>gignat</name>
     <packaging>war</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHO1T</version>
     <dependencies>
         <dependency>
             <groupId>c3p0</groupId>
